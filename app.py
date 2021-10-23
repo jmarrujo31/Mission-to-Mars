@@ -2,10 +2,25 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 4,
-   "id": "c4708a28",
+   "execution_count": 1,
+   "id": "f633b34b",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "[WDM] - \n",
+      "\n",
+      "[WDM] - ====== WebDriver manager ======\n",
+      "[WDM] - Current google-chrome version is 94.0.4606\n",
+      "[WDM] - Get LATEST driver version for 94.0.4606\n",
+      "[WDM] - Get LATEST driver version for 94.0.4606\n",
+      "[WDM] - Trying to download new driver from https://chromedriver.storage.googleapis.com/94.0.4606.61/chromedriver_mac64.zip\n",
+      "[WDM] - Driver has been saved in cache [/Users/josephmarrujo/.wdm/drivers/chromedriver/mac64/94.0.4606.61]\n"
+     ]
+    }
+   ],
    "source": [
     "from flask import Flask, render_template, redirect, url_for\n",
     "from flask_pymongo import PyMongo\n",
@@ -14,8 +29,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
-   "id": "d3ccbcdb",
+   "execution_count": 2,
+   "id": "216bd4aa",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -25,8 +40,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
-   "id": "dcf8c338",
+   "execution_count": 3,
+   "id": "3be1e787",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -38,28 +53,9 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "9f7305f5",
+   "id": "40a3f7f9",
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      " * Serving Flask app '__main__' (lazy loading)\n",
-      " * Environment: production\n",
-      "\u001b[31m   WARNING: This is a development server. Do not use it in a production deployment.\u001b[0m\n",
-      "\u001b[2m   Use a production WSGI server instead.\u001b[0m\n",
-      " * Debug mode: off\n"
-     ]
-    },
-    {
-     "name": "stderr",
-     "output_type": "stream",
-     "text": [
-      " * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "@app.route(\"/\")\n",
     "def index():\n",
@@ -77,14 +73,6 @@
     "if __name__ == \"__main__\":\n",
     "   app.run()"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "b02c681b",
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
