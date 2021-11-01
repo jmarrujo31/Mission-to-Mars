@@ -95,3 +95,37 @@ def mars_facts():
 
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html()
+
+# 1. Use browser to visit the URL 
+url = 'https://marshemispheres.com/'
+browser.visit(url)
+
+# 2. Create a list to hold the images and titles.
+hemisphere_image_urls = []
+
+# 3. Write code to retrieve the image urls and titles for each hemisphere.
+# parse HTML to Bsoup
+html = browser.html
+main_page_soup = soup(html, 'html.parser')
+# count pictures
+picture_count = len(main_page_soup.select('div.item'))
+
+for i in range(picture_count):
+ 
+    results = {}
+    link = main_page_soup.select('div.description a')[i].get('href')
+    # Use the base URL to create an absolute URL
+    url = f'https://marshemispheres.com/{link}'
+    browser.visit(url)
+    html = browser.html
+    image_page_soup = soup(html, 'html.parser')
+    img_url = image_page_soup.select_one('div.downloads ul li a').get('href')
+    title = image_page_soup.select_one('h2.title').get_text()
+    #results to dic
+    url = f'https://marshemispheres.com/{img_url}'
+    results = {'img_url':url, 'title':title}
+    hemisphere_image_urls.append(results)
+    
+# 4. Print the list that holds the dictionary of each image url and title.
+hemisphere_image_urls
+browser.quit()
